@@ -1,72 +1,85 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
+html, body{
     margin: 0;
-    font-family: Inter, sans-serif;
-    background-color: #FAFAF8;
+    color: #000;
+    background-color: white;
+    text-align: center;
+    height: 100%; 
 }
-
 header {
+    background-color:deepskyblue;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    height: 45;
+    margin-bottom: 100px;
+    
+  }
+header > img {
+    width: 40px;
+    margin-right: 7px;
+}
+header > h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-right: 7px;
+    margin-top: 0px;
+}
+main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 11px;
-    height: 80px;
-    background-color:deepskyblue;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+    flex-direction: column;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-header > img {
-    width: 50px;
+.ingredients-form{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 20px;
 }
-
-header > h1 {
+.ingredients-form > input{
+    width: auto;
+    max-width: 400px;
+    border-radius: 6px;
+    border-color: deepskyblue;
+    font-size: 2rem;
     font-weight: 700;
-    color: #FAFAF8;
+    text-align: center; 
+    white-space: nowrap;
+    flex-grow: 1;
+    height: 75px;
 }
 
-main {
-    padding: 30px 30px 10px;
-    height: auto;
-}
-
-.add-ingredient-form {
+.ingredients-form > button{
+    position: relative; 
     display: flex;
     justify-content: center;
-    gap: 12px;
-    height: 38px;
-}
-
-.add-ingredient-form > input {
-    border-radius: 6px;
-    border: 1px solid #D1D5DB;
-    padding: 9px 13px;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-    flex-grow: 1;
-    min-width: 150px;
-    max-width: 400px;
-}
-
-.add-ingredient-form > button {
-    font-family: Inter, sans-serif;
+    align-items: center;
+    width: auto;
     border-radius: 6px;
     border: none;
     background-color: deepskyblue;
     color: #FAFAF8;
-    width: 150px;
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-align: center; 
+    white-space: nowrap;
+    height: 75px;
+    
 }
-
-.add-ingredient-form > button::before {
-    content: "+";
-    margin-right: 5px;
-}
-
 ul.ingredients-list {
+    margin-top: 20px;
     margin-bottom: 48px;
+    width: 100%; 
+    text-align: left;
+    padding-left: 20px;
 }
 
 ul.ingredients-list > li {
@@ -116,4 +129,4 @@ ul.ingredients-list > li {
 
 .suggested-recipe-container ul li, .suggested-recipe-container ol li {
     margin-bottom: 8px;
-}
+}  

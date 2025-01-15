@@ -6,17 +6,14 @@ You are an assistant that receives a list of ingredients that a user has and sug
 `
 
 const anthropic = new Anthropic({
-    // Make sure you set an environment variable in Scrimba 
     // for ANTHROPIC_API_KEY
-    // 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
-    //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
+    // ANTHROPIC_API_KEY = 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
     apiKey: process.env.ANTHROPIC_API_KEY,
     dangerouslyAllowBrowser: true,
 })
 
 export async function getRecipeFromChefClaude(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
-
     const msg = await anthropic.messages.create({
         model: "claude-3-haiku-20240307",
         max_tokens: 1024,
@@ -28,8 +25,8 @@ export async function getRecipeFromChefClaude(ingredientsArr) {
     return msg.content[0].text
 }
 
-// Make sure you set an environment variable in Scrimba 
 // for HF_ACCESS_TOKEN
+//HF_ACCESS_TOKEN = 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
 const hf = new HfInference(process.env.HF_ACCESS_TOKEN)
 
 export async function getRecipeFromMistral(ingredientsArr) {
